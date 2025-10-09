@@ -1,0 +1,176 @@
+# UdyogaMarga - Comprehensive .gitignore
+# This covers both frontend (React) and backend (Node.js) efficiently
+
+# ====================================
+# Dependencies and Package Managers
+# ====================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.pnp
+.pnp.js
+
+# ====================================
+# Environment Variables & Secrets
+# ====================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.staging
+config.json
+
+# ====================================
+# Build Outputs & Distribution
+# ====================================
+/frontend/build/
+/backend/dist/
+/backend/build/
+build/
+dist/
+coverage/
+.nyc_output/
+
+# ====================================
+# Development & Testing
+# ====================================
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.vscode-test
+junit.xml
+test-results/
+playwright-report/
+test-results.xml
+
+# ====================================
+# Logs & Runtime Data
+# ====================================
+logs/
+*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+lib-cov
+coverage
+.grunt
+.lock-wscript
+
+# ====================================
+# OS & Editor Files
+# ====================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+.directory
+.fuse_hidden*
+
+# Windows
+$RECYCLE.BIN/
+Desktop.ini
+
+# Linux
+.nfs*
+
+# ====================================
+# IDE & Editor Configurations
+# ====================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.sublime-project
+*.sublime-workspace
+
+# ====================================
+# Database & Storage
+# ====================================
+/data/
+*.sqlite
+*.sqlite3
+*.db
+database.json
+mongo-data/
+
+# ====================================
+# Deployment & DevOps
+# ====================================
+.vercel
+.netlify
+.serverless
+.firebase/
+.firebaserc
+firebase-debug.log
+.pm2/
+
+# ====================================
+# Security & Certificates
+# ====================================
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+.certificates/
+ssl/
+
+# ====================================
+# Temporary & Cache Files
+# ====================================
+.tmp/
+.temp/
+*.tgz
+*.tar.gz
+*.rar
+*.zip
+*.7z
+
+# ====================================
+# Project Specific Exclusions
+# ====================================
+# MongoDB data directory (if running locally)
+/mongodb-data/
+
+# Uploaded files (if file upload feature exists)
+/uploads/
+/public/uploads/
+
+# Generated documentation
+/docs/generated/
+
+# Backup files
+*.backup
+*.sql
+
+# ====================================
+# Include Important Files
+# ====================================
+# Force include these important files even if they match patterns above
+!.gitkeep
+!.env.example
+!README.md
+!package.json
