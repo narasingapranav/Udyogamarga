@@ -223,7 +223,7 @@ router.post('/:id/register', auth, async (req, res) => {
     }
 
     // Check if registration deadline has passed
-    if (new Date() > exam.examDates.registrationEnd) {
+    if (new Date() > exam.registrationDeadline) {
       return res.status(400).json({
         success: false,
         message: 'Registration deadline has passed'
@@ -243,7 +243,8 @@ router.post('/:id/register', auth, async (req, res) => {
     }
 
     // Generate application number
-    const applicationNumber = `${exam.shortName}${Date.now()}${Math.floor(Math.random() * 1000)}`;
+    const examCode = exam.title.substring(0, 3).toUpperCase();
+    const applicationNumber = `${examCode}${Date.now()}${Math.floor(Math.random() * 1000)}`;
 
     // Add registration to exam
     exam.registeredCandidates.push({

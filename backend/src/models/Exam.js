@@ -52,7 +52,21 @@ const examSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
-  }
+  },
+  registeredCandidates: [{
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    registeredAt: {
+      type: Date,
+      default: Date.now
+    },
+    applicationNumber: {
+      type: String,
+      unique: true
+    }
+  }]
 }, {
   timestamps: true
 });
