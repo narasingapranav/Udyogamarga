@@ -721,23 +721,23 @@ function AdminDashboard() {
       <h2>Admin Dashboard</h2>
       
       <div className="stats-grid">
-        <div className="stat-card">
+        <div className="stat-card stat-card--users">
           <h3>Total Users</h3>
           <p className="stat-number">{stats?.totalUsers || 0}</p>
         </div>
-        <div className="stat-card">
+        <div className="stat-card stat-card--jobs">
           <h3>Total Jobs</h3>
           <p className="stat-number">{stats?.totalJobs || 0}</p>
         </div>
-        <div className="stat-card">
+        <div className="stat-card stat-card--jobs">
           <h3>Active Jobs</h3>
           <p className="stat-number">{stats?.activeJobs || 0}</p>
         </div>
-        <div className="stat-card">
+        <div className="stat-card stat-card--exams">
           <h3>Total Exams</h3>
           <p className="stat-number">{stats?.totalExams || 0}</p>
         </div>
-        <div className="stat-card">
+        <div className="stat-card stat-card--exams">
           <h3>Upcoming Exams</h3>
           <p className="stat-number">{stats?.upcomingExams || 0}</p>
         </div>
