@@ -8,6 +8,18 @@ require('dotenv').config({ path: path.join(__dirname, '../.env') });
 
 const app = express();
 
+const allowedOrigins = new Set(
+  [
+    'https://udyogmarga.netlify.app',
+    'https://udyogmarga.netlify.app/',
+    process.env.CLIENT_URLS,
+    process.env.CLIENT_URL,
+    'http://localhost:3000'
+  ]
+    .filter(Boolean)
+    .flatMap((value) => value.split(',').map((origin) => origin.trim()).filter(Boolean))
+);
+
 // Security middleware
 app.use(helmet());
 
@@ -21,7 +33,13 @@ app.use(limiter);
 
 // CORS configuration
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.has(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error(`CORS blocked for origin: ${origin}`));
+  },
   credentials: true
 }));
 
