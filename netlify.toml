@@ -1,0 +1,12 @@
+[build]
+  base = "frontend"
+  publish = "build"
+  command = "npm run build"
+
+[context.production.environment]
+  # Update this to your Render backend URL before deploying
+  REACT_APP_API_URL = "https://udyogamarga.onrender.com"
+
+[context.deploy-preview.environment]
+  # Use the same API URL for previews or change to a staging endpoint
+  REACT_APP_API_URL = "https://udyogamarga.onrender.com"
